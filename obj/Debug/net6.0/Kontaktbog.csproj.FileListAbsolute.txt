@@ -1,0 +1,15 @@
+C:\Users\sande\source\repos\Kontaktbog\bin\Debug\net6.0\Kontaktbog.exe
+C:\Users\sande\source\repos\Kontaktbog\bin\Debug\net6.0\Kontaktbog.deps.json
+C:\Users\sande\source\repos\Kontaktbog\bin\Debug\net6.0\Kontaktbog.runtimeconfig.json
+C:\Users\sande\source\repos\Kontaktbog\bin\Debug\net6.0\Kontaktbog.dll
+C:\Users\sande\source\repos\Kontaktbog\bin\Debug\net6.0\Kontaktbog.pdb
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.csproj.AssemblyReference.cache
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.AssemblyInfoInputs.cache
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.AssemblyInfo.cs
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.csproj.CoreCompileInputs.cache
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.dll
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\refint\Kontaktbog.dll
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.pdb
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\Kontaktbog.genruntimeconfig.cache
+C:\Users\sande\source\repos\Kontaktbog\obj\Debug\net6.0\ref\Kontaktbog.dll
