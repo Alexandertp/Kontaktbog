@@ -2,19 +2,48 @@
 Console.WriteLine("Hello, World!");
 //A list of objects with the class contact, used to more easily create more and view various contacts.
 List<Contact> contacts = new List<Contact>();
+List<Contact> virksomheder = new List<Contact>();
 contacts.Add(new Contact("Speedwagon","Stormwind Harbor",2482914));
 contacts.Add(new Contact("Darron Dawnshine", "Eversong Forest", 3124141));
-while(true)
+string listChosen = "";
+while (true)
 {
+    
+    //First the user is asked what sort of contact list they want to access.
+    Console.WriteLine("Hvilken liste vil du tilgå? \n Virksomheder eller personer?");
+    bool choiceSuccess = false;
+    do
+    {
+        
+        listChosen = Console.ReadLine();
+        if (listChosen.ToLower() == "virksomheder" || listChosen.ToLower() == "firmaer" || listChosen.ToLower() == "corporations" || listChosen.ToLower() == "businesses")
+        {
+            listChosen = "bis";
+            choiceSuccess = true;
+        }
+        if (listChosen.ToLower() == "personer" || listChosen.ToLower() == "individuals" || listChosen.ToLower() == "kunder" || listChosen.ToLower() == "venner" || listChosen.ToLower() == "friends")
+        {
+            listChosen = "pers";
+            choiceSuccess= true;
+        }
+    } while (choiceSuccess == false);
+    
     //The users input, used to call various functions
     string input = Console.ReadLine();
     if(input.ToLower() == "create")
     {
-        CreateNewContact();
+        if (listChosen.ToLower() == "pers")
+        {
+            CreateNewContact(contacts);
+        }
+        if (listChosen.ToLower() == "bis")
+        {
+            CreateNewContact(virksomheder);
+        }
     }
     if (input.ToLower() == "read" || input.ToLower() == "display" )
     {
-        ReadContact();
+        ReadContact(listChosen);
     }
     if (input.ToLower() == "delete" || input.ToLower() == "remove" || input.ToLower() == "fjern")
     {
@@ -90,13 +119,22 @@ while(true)
                 Console.WriteLine("Dette er ikke et korrekt telefonnummer, prøv igen");
             }
         } while (telefonnummer.ToString().Length != 8);
-        contacts.RemoveAt(int.Parse(input));
-        contacts.Insert(int.Parse(input),new Contact(name,adresse,telefonnummer));
+
+        if (listChosen == "pers")
+        {
+            contacts.RemoveAt(int.Parse(input));
+            contacts.Insert(int.Parse(input), new Contact(name, adresse, telefonnummer));
+        }
+        if(listChosen == "bis")
+        {
+            virksomheder.RemoveAt(int.Parse(input));
+            virksomheder.Insert(int.Parse(input), new Contact(name,adresse, telefonnummer));
+        }
     }
 }
 
 //A function for creating new contacts and adding them to the list.
-void CreateNewContact()
+void CreateNewContact(List<Contact> list)
 {
     Console.WriteLine("Indtast et navn.");
     string name = Console.ReadLine();
@@ -127,21 +165,33 @@ void CreateNewContact()
         }
     } while (telefonnummer.ToString().Length != 8);
 
-    contacts.Add(new Contact(name, adresse, telefonnummer));
+    list.Add(new Contact(name, adresse, telefonnummer));
     Console.WriteLine("Er dette korrekt?");
-    Console.WriteLine(contacts.Last());
+    Console.WriteLine(list.Last());
 }
 void UpdateContact()
 {
 
 }
-void ReadContact ()
+void ReadContact (string choice)
 {
-    for (int i = 0; i < contacts.Count; i++)
+    if (choice == "bis")
     {
-        Console.WriteLine(i);
-        Console.WriteLine(contacts[i]);
+        for (int i = 0; i < virksomheder.Count; i++)
+        {
+            Console.WriteLine(i);
+            Console.WriteLine(virksomheder[i]);
+        }
     }
+    if (choice == "pers")
+    {
+        for (int i = 0; i < contacts.Count; i++)
+        {
+            Console.WriteLine(i);
+            Console.WriteLine(contacts[i]);
+        }
+    }
+    
     //foreach(Contact contact in contacts)
     //{
     //    Console.WriteLine(contact);
